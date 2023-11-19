@@ -1,0 +1,6 @@
+public final class dev/teogor/xenoglot/android/LanguageUtils {
+	public static final field INSTANCE Ldev/teogor/xenoglot/android/LanguageUtils;
+	public final fun setAppLanguage (Ljava/lang/String;)V
+	public final fun setAppLanguage (Ljava/util/Locale;)V
+}
+

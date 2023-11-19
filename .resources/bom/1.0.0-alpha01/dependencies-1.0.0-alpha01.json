@@ -1,0 +1,392 @@
+[
+  {
+    "completeName": "Xenoglot Android",
+    "name": "android",
+    "displayName": "Android",
+    "description": "🌍 Xenoglot seamlessly masters languages and locales, empowering developers to integrate multilingual capabilities into their applications with ease.",
+    "groupId": "dev.teogor.xenoglot",
+    "artifactId": "android",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "patch": 0,
+      "flag": "Alpha",
+      "versionQualifier": 1
+    },
+    "path": ":android",
+    "dependencies": [
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "api",
+        "group": "androidx.appcompat",
+        "artifact": "appcompat",
+        "version": "1.6.1"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.LocalProjectDependency",
+        "implementationType": "debugAndroidTestCompileClasspath",
+        "projectName": "Xenoglot",
+        "modulePath": ":android"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "debugAndroidTestCompileClasspath",
+        "group": "androidx.appcompat",
+        "artifact": "appcompat",
+        "version": "1.6.1"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.LocalProjectDependency",
+        "implementationType": "debugAndroidTestRuntimeClasspath",
+        "projectName": "Xenoglot",
+        "modulePath": ":android"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.LocalProjectDependency",
+        "implementationType": "debugUnitTestCompileClasspath",
+        "projectName": "Xenoglot",
+        "modulePath": ":android"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "debugUnitTestCompileClasspath",
+        "group": "androidx.appcompat",
+        "artifact": "appcompat",
+        "version": "1.6.1"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.LocalProjectDependency",
+        "implementationType": "debugUnitTestRuntimeClasspath",
+        "projectName": "Xenoglot",
+        "modulePath": ":android"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaGfmPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaGfmPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaGfmPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaGfmPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaHtmlPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaHtmlPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaHtmlPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaHtmlPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJavadocPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJavadocPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJavadocPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJavadocPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJekyllPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJekyllPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJekyllPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJekyllPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.LocalProjectDependency",
+        "implementationType": "releaseUnitTestCompileClasspath",
+        "projectName": "Xenoglot",
+        "modulePath": ":android"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "releaseUnitTestCompileClasspath",
+        "group": "androidx.appcompat",
+        "artifact": "appcompat",
+        "version": "1.6.1"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.LocalProjectDependency",
+        "implementationType": "releaseUnitTestRuntimeClasspath",
+        "projectName": "Xenoglot",
+        "modulePath": ":android"
+      }
+    ],
+    "canBePublished": true,
+    "names": [
+      "Xenoglot",
+      "Android"
+    ]
+  },
+  {
+    "completeName": "Xenoglot Core",
+    "name": "core",
+    "displayName": "Core",
+    "description": "🌍 Xenoglot seamlessly masters languages and locales, empowering developers to integrate multilingual capabilities into their applications with ease.",
+    "groupId": "dev.teogor.xenoglot",
+    "artifactId": "core",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "patch": 0,
+      "flag": "Alpha",
+      "versionQualifier": 1
+    },
+    "path": ":core",
+    "dependencies": [
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaGfmPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaGfmPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaGfmPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaGfmPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaHtmlPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaHtmlPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaHtmlPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaHtmlPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJavadocPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJavadocPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJavadocPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJavadocPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJekyllPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJekyllPartialPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJekyllPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "analysis-kotlin-descriptors",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "dokkaJekyllPlugin",
+        "group": "org.jetbrains.dokka",
+        "artifact": "dokka-base",
+        "version": "1.9.0"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "embeddedKotlin",
+        "group": "org.jetbrains.kotlin",
+        "artifact": "kotlin-stdlib-jdk8",
+        "version": "1.8.20"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "embeddedKotlin",
+        "group": "org.jetbrains.kotlin",
+        "artifact": "kotlin-reflect",
+        "version": "1.8.20"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "kotlinCompilerPluginClasspathMain",
+        "group": "org.jetbrains.kotlin",
+        "artifact": "kotlin-scripting-compiler-embeddable",
+        "version": "1.9.10"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "kotlinCompilerPluginClasspathMain",
+        "group": "org.jetbrains.kotlin",
+        "artifact": "kotlin-sam-with-receiver",
+        "version": "1.9.10"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "kotlinCompilerPluginClasspathMain",
+        "group": "org.jetbrains.kotlin",
+        "artifact": "kotlin-assignment",
+        "version": "1.9.10"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "kotlinCompilerPluginClasspathTest",
+        "group": "org.jetbrains.kotlin",
+        "artifact": "kotlin-scripting-compiler-embeddable",
+        "version": "1.9.10"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "kotlinCompilerPluginClasspathTest",
+        "group": "org.jetbrains.kotlin",
+        "artifact": "kotlin-sam-with-receiver",
+        "version": "1.9.10"
+      },
+      {
+        "type": "dev.teogor.winds.api.model.Dependency",
+        "implementationType": "kotlinCompilerPluginClasspathTest",
+        "group": "org.jetbrains.kotlin",
+        "artifact": "kotlin-assignment",
+        "version": "1.9.10"
+      }
+    ],
+    "canBePublished": true,
+    "names": [
+      "Xenoglot",
+      "Core"
+    ]
+  }
+]
