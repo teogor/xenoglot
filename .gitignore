@@ -1,6 +1,9 @@
 # Gradle files
 .gradle/
 build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -15,6 +18,37 @@ captures/
 *.apk
 output.json
 
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
 # IntelliJ
 *.iml
 .idea/
@@ -22,12 +56,18 @@ misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
 
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
 # Keystore files
 *.jks
 *.keystore
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
-
 # Android Profiling
 *.hprof
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
