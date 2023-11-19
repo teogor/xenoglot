@@ -20,7 +20,7 @@ concurrency:
 
 env:
   OWNER: teogor
-  DESTINATION_BRANCH: docs/${{ env.OWNER }}/${{ github.event.repository.name }}/${{ github.sha }}
+  DESTINATION_BRANCH: docs/${{ OWNER }}/${{ github.event.repository.name }}/${{ github.sha }}
   REPOSITORY: ${{ github.event.repository.name }}
   REPO: ${{ env.OWNER }}/${{ github.event.repository.name }}
   DISPLAY_NAME: Xenoglot
