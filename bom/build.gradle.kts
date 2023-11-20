@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 plugins {
-  id("dev.teogor.winds")
+  alias(libs.plugins.winds)
 }
 
 winds {

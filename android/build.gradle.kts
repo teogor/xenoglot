@@ -17,7 +17,8 @@
 plugins {
   alias(libs.plugins.android.library)
   alias(libs.plugins.kotlin.android)
-  id("dev.teogor.winds")
+
+  alias(libs.plugins.winds)
 }
 
 kotlin {
