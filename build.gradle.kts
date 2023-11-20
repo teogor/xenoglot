@@ -3,13 +3,12 @@ import dev.teogor.winds.api.MavenPublish
 import dev.teogor.winds.api.getValue
 import dev.teogor.winds.api.model.Developer
 import dev.teogor.winds.api.model.LicenseType
-import dev.teogor.winds.api.model.Version
+import dev.teogor.winds.api.model.createVersion
 import dev.teogor.winds.api.provider.Scm
 import dev.teogor.winds.gradle.utils.afterWindsPluginConfiguration
 import dev.teogor.winds.gradle.utils.attachTo
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaPlugin
-import org.jetbrains.dokka.gradle.DokkaTask
 
 buildscript {
   repositories {
@@ -27,11 +26,12 @@ plugins {
   // Android Tools
   alias(libs.plugins.android.library) apply false
 
-  alias(libs.plugins.winds)
-  alias(libs.plugins.vanniktech.maven)
-  alias(libs.plugins.dokka)
-  alias(libs.plugins.spotless)
-  alias(libs.plugins.api.validator)
+  alias(libs.plugins.winds) apply true
+
+  alias(libs.plugins.vanniktech.maven) apply true
+  alias(libs.plugins.dokka) apply true
+  alias(libs.plugins.spotless) apply true
+  alias(libs.plugins.api.validator) apply true
 }
 
 winds {
@@ -52,12 +52,11 @@ winds {
 
     groupId = "dev.teogor.xenoglot"
     artifactIdElements = 1
+    url = "https://source.teogor.dev/xenoglot"
 
-    version = Version(
-      major = 1,
-      minor = 0,
-      patch = 0,
-    ).setAlphaRelease(1)
+    version = createVersion(1, 0, 0) {
+      alphaRelease(1)
+    }
 
     // TODO winds
     //  required by dokka

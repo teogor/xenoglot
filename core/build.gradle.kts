@@ -17,7 +17,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
   `kotlin-dsl`
-  id("dev.teogor.winds")
+
+  alias(libs.plugins.winds)
 }
 
 java {
