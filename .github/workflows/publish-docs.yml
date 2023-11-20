@@ -19,10 +19,9 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  OWNER: teogor
-  DESTINATION_BRANCH: docs/teogor/${{ github.event.repository.name }}/${{ github.sha }}
+  DESTINATION_BRANCH: docs/${{ github.event.repository.owner.name }}/${{ github.event.repository.name }}/${{ github.sha }}
   REPOSITORY: ${{ github.event.repository.name }}
-  REPO: teogor/${{ github.event.repository.name }}
+  REPO: ${{ github.event.repository.owner.name }}/${{ github.event.repository.name }}
   DISPLAY_NAME: Xenoglot
 
 jobs:
