@@ -1,0 +1,48 @@
+[
+  {
+    "completeName": "Xenoglot Android",
+    "name": "android",
+    "displayName": "Android",
+    "description": "🌍 Xenoglot seamlessly masters languages and locales, empowering developers to integrate multilingual capabilities into their applications with ease.",
+    "groupId": "dev.teogor.xenoglot",
+    "artifactId": "android",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "patch": 0,
+      "flag": "Alpha",
+      "versionQualifier": 1
+    },
+    "path": ":android",
+    "dependencies": [
+    ],
+    "canBePublished": true,
+    "names": [
+      "Xenoglot",
+      "Android"
+    ]
+  },
+  {
+    "completeName": "Xenoglot Core",
+    "name": "core",
+    "displayName": "Core",
+    "description": "🌍 Xenoglot seamlessly masters languages and locales, empowering developers to integrate multilingual capabilities into their applications with ease.",
+    "groupId": "dev.teogor.xenoglot",
+    "artifactId": "core",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "patch": 0,
+      "flag": "Alpha",
+      "versionQualifier": 1
+    },
+    "path": ":core",
+    "dependencies": [
+    ],
+    "canBePublished": true,
+    "names": [
+      "Xenoglot",
+      "Core"
+    ]
+  }
+]
