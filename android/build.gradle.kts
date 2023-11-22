@@ -26,7 +26,7 @@ kotlin {
 }
 
 android {
-  namespace = "dev.teogor.querent.common"
+  namespace = "dev.teogor.xenoglot.android"
 
   compileSdk = 34
 
