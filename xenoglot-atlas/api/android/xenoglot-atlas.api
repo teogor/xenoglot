@@ -1,0 +1,69 @@
+public final class dev/teogor/xenoglot/atlas/CountryLanguageMapping {
+	public static final field Companion Ldev/teogor/xenoglot/atlas/CountryLanguageMapping$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/util/List;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/List;
+	public final fun copy (Ljava/lang/String;Ljava/util/List;)Ldev/teogor/xenoglot/atlas/CountryLanguageMapping;
+	public static synthetic fun copy$default (Ldev/teogor/xenoglot/atlas/CountryLanguageMapping;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)Ldev/teogor/xenoglot/atlas/CountryLanguageMapping;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCountryCode ()Ljava/lang/String;
+	public final fun getLanguageCodes ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public synthetic class dev/teogor/xenoglot/atlas/CountryLanguageMapping$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/teogor/xenoglot/atlas/CountryLanguageMapping$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldev/teogor/xenoglot/atlas/CountryLanguageMapping;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldev/teogor/xenoglot/atlas/CountryLanguageMapping;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/teogor/xenoglot/atlas/CountryLanguageMapping$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/teogor/xenoglot/atlas/CountryLanguageRegistry {
+	public static final field INSTANCE Ldev/teogor/xenoglot/atlas/CountryLanguageRegistry;
+	public final fun countryExists (Ljava/lang/String;)Z
+	public final fun getAllCountryCodes ()Ljava/util/List;
+	public final fun getCountryLanguageMapping (Ljava/lang/String;)Ldev/teogor/xenoglot/atlas/CountryLanguageMapping;
+	public final fun getCountryLanguageMappings ()Ljava/util/List;
+	public final fun getLanguagesForCountry (Ljava/lang/String;)Ljava/util/List;
+}
+
+public final class dev/teogor/xenoglot/atlas/CountryLocalization {
+	public static final field Companion Ldev/teogor/xenoglot/atlas/CountryLocalization$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ldev/teogor/xenoglot/atlas/CountryLocalization;
+	public static synthetic fun copy$default (Ldev/teogor/xenoglot/atlas/CountryLocalization;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ldev/teogor/xenoglot/atlas/CountryLocalization;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCode ()Ljava/lang/String;
+	public final fun getCountry ()Ljava/lang/String;
+	public final fun getLanguage ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public synthetic class dev/teogor/xenoglot/atlas/CountryLocalization$$serializer : kotlinx/serialization/internal/GeneratedSerializer {
+	public static final field INSTANCE Ldev/teogor/xenoglot/atlas/CountryLocalization$$serializer;
+	public final fun childSerializers ()[Lkotlinx/serialization/KSerializer;
+	public final fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ldev/teogor/xenoglot/atlas/CountryLocalization;
+	public synthetic fun deserialize (Lkotlinx/serialization/encoding/Decoder;)Ljava/lang/Object;
+	public final fun getDescriptor ()Lkotlinx/serialization/descriptors/SerialDescriptor;
+	public final fun serialize (Lkotlinx/serialization/encoding/Encoder;Ldev/teogor/xenoglot/atlas/CountryLocalization;)V
+	public synthetic fun serialize (Lkotlinx/serialization/encoding/Encoder;Ljava/lang/Object;)V
+	public fun typeParametersSerializers ()[Lkotlinx/serialization/KSerializer;
+}
+
+public final class dev/teogor/xenoglot/atlas/CountryLocalization$Companion {
+	public final fun serializer ()Lkotlinx/serialization/KSerializer;
+}
+

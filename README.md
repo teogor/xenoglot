@@ -20,6 +20,19 @@ Xenoglot is a comprehensive library for representing, managing, and interacting 
 
 * **Language Territorialization:** Xenoglot provides functionality for territorializing languages, adapting them to specific geographical or political contexts.
 
+**Kotlin Multiplatform Support**
+
+Xenoglot is designed to work across various platforms through Kotlin Multiplatform, allowing you to use it in JVM, Android, JavaScript, iOS, macOS, Linux, tvOS, and watchOS environments. Here are some of the supported targets:
+
+- **JVM**: Supports Java Virtual Machine with Kotlin configured for JDK 11.
+- **Android**: Configured to publish all library variants.
+- **JavaScript**: Supports WebAssembly (WASM) and JavaScript IR, including browser and Node.js environments, and generates TypeScript definitions.
+- **iOS**: Supports iOS devices and simulators, including `iosX64`, `iosArm64`, and `iosSimulatorArm64`.
+- **macOS**: Supports macOS with `macosX64` and `macosArm64`.
+- **Linux**: Supports Linux with `linuxX64` and `linuxArm64`.
+- **tvOS**: Supports tvOS devices and simulators, including `tvosX64`, `tvosArm64`, and `tvosSimulatorArm64`.
+- **watchOS**: Supports watchOS devices and simulators, including `watchosX64`, `watchosArm32`, `watchosArm64`, `watchosDeviceArm64`, and `watchosSimulatorArm64`.
+
 **Installation**
 
 To install Xenoglot, add the following dependency to your build script:
@@ -53,14 +66,6 @@ val isSpokenInRomania = language.isSpokenIn(Country.Romania)
 ```kotlin
 val isDialect = Dialect("en-US", Language.English).isDialect
 val isScriptUsedInLanguage = Script.Cyrillic.isWrittenIn(Language.Russian)
-```
-
-**Interacting with Language Tags**
-
-```kotlin
-val languageTag = LanguageTag("fr", LanguageFamily.Romance)
-val language = languageTag.asLanguage()
-val countryCode = languageTag.substringAfter("-")
 ```
 
 **Territorializing Languages**

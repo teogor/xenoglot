@@ -1,4 +1,4 @@
-## Xenoglot 🌍
+# Xenoglot
 
 ### Overview
 
@@ -30,15 +30,124 @@ project that requires accurate and consistent handling of language data.
 * **Language Territorialization:** Xenoglot provides functionality for territorializing languages,
   adapting them to specific geographical or political contexts.
 
-### Installation
+**Kotlin Multiplatform Support**
 
-For a detailed installation guide, please refer to the following page: [releases](releases.md).
+Xenoglot is designed to work across various platforms through Kotlin Multiplatform, allowing you to use it in JVM, Android, JavaScript, iOS, macOS, Linux, tvOS, and watchOS environments. Here are some of the supported targets:
 
-**Usage**
+- **JVM**: Supports Java Virtual Machine with Kotlin configured for JDK 11.
+- **Android**: Configured to publish all library variants.
+- **JavaScript**: Supports WebAssembly (WASM) and JavaScript IR, including browser and Node.js environments, and generates TypeScript definitions.
+- **iOS**: Supports iOS devices and simulators, including `iosX64`, `iosArm64`, and `iosSimulatorArm64`.
+- **macOS**: Supports macOS with `macosX64` and `macosArm64`.
+- **Linux**: Supports Linux with `linuxX64` and `linuxArm64`.
+- **tvOS**: Supports tvOS devices and simulators, including `tvosX64`, `tvosArm64`, and `tvosSimulatorArm64`.
+- **watchOS**: Supports watchOS devices and simulators, including `watchosX64`, `watchosArm32`, `watchosArm64`, `watchosDeviceArm64`, and `watchosSimulatorArm64`.
+
+[//]: # (REGION-DEPENDENCIES)
+
+## Getting Started with Xenoglot
+
+**Adding Dependencies:**
+
+* **Manual Setup:**  This section guides you through adding Xenoglot dependencies directly to your project's `build.gradle` files. ([Link to Manual Dependency Setup Section](#adding-xenoglot-dependencies-manually))
+* **Version Catalog (Recommended):** For a more streamlined approach, consider integrating a version catalog. This allows for centralized version management and easier updates. ([Link to Version Catalog Section](#managing-xenoglot-versions-with-version-catalog-recommended))
+
+**Note:** If you prefer manual dependency setup, follow the instructions in the "Manual Setup" section. Otherwise, jump to the "Version Catalog" section for centralized management.
+
+For information on using the KAPT plugin, see the [KAPT documentation](https://kotlinlang.org/docs/kapt.html).
+For information on using the KSP plugin, see the [KSP quick-start documentation](https://kotlinlang.org/docs/ksp-quickstart.html).
+For more information about dependencies, see [Add Build Dependencies](https://developer.android.com/studio/build/dependencies).
+
+### Adding Xenoglot Dependencies Manually
+
+To use Xenoglot in your app, add the following dependencies to your app's `build.gradle` file:
+
+=== "Groovy"
+
+    ```groovy title="build.gradle"
+    dependencies {
+        def teogorXenoglot = "1.0.0-alpha01"
+
+        implementation "dev.teogor.xenoglot:android:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:bom:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:core:$teogorXenoglot"
+    }
+    ```
+
+=== "Kotlin"
+
+    ```kotlin title="build.gradle.kts"
+    dependencies {
+        val teogorXenoglot = "1.0.0-alpha01"
+
+        implementation("dev.teogor.xenoglot:android:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:bom:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:core:$teogorXenoglot")
+    }
+    ```
+
+### Managing Xenoglot Versions with Version Catalog (Recommended)
+
+This section guides you through utilizing a version catalog for centralized management of Xenoglot dependencies in your project. This approach simplifies updates and ensures consistency.
+
+First, define the dependencies in the `libs.versions.toml` file:
+
+- **Group-Name Based:** This approach is used for declaring libraries referenced by group and artifact name.
+- **Module Based:** This approach is used for declaring libraries referenced by their module.
+
+=== "Group-Name Based"
+
+    ```toml title="gradle/libs.versions.toml"
+    [versions]
+    teogor-xenoglot = "1.0.0-alpha01"
+
+    [libraries]
+    teogor-xenoglot-android = { group = "dev.teogor.xenoglot", name = "android", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-bom = { group = "dev.teogor.xenoglot", name = "bom", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-core = { group = "dev.teogor.xenoglot", name = "core", version.ref = "teogor-xenoglot" }
+    ```
+
+=== "Module Based"
+
+    ```toml title="gradle/libs.versions.toml"
+    [versions]
+    teogor-xenoglot = "1.0.0-alpha01"
+
+    [libraries]
+    teogor-xenoglot-android = { module = "dev.teogor.xenoglot:android", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-bom = { module = "dev.teogor.xenoglot:bom", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-core = { module = "dev.teogor.xenoglot:core", version.ref = "teogor-xenoglot" }
+    ```
+
+Then, add these dependencies in your app's `build.gradle` file:
+
+=== "Groovy"
+
+    ```groovy title="build.gradle"
+    dependencies {
+        implementation libs.teogor.xenoglot.android
+        implementation libs.teogor.xenoglot.bom
+        implementation libs.teogor.xenoglot.core
+    }
+    ```
+
+=== "Kotlin"
+
+    ```kotlin title="build.gradle.kts"
+    dependencies {
+        implementation(libs.teogor.xenoglot.android)
+        implementation(libs.teogor.xenoglot.bom)
+        implementation(libs.teogor.xenoglot.core)
+    }
+    ```
+
+[//]: # (REGION-DEPENDENCIES)
+
+## Usage
 
 The following examples demonstrate how to use Xenoglot to represent and interact with language data:
 
-**Retrieving Language Information**
+### Retrieving Language Information
 
 ```kotlin
 val language = Language.English
@@ -47,22 +156,14 @@ val languageFamily = language.languageFamily
 val isSpokenInRomania = language.isSpokenIn(Country.Romania)
 ```
 
-**Checking Language Usage Patterns**
+### Checking Language Usage Patterns
 
 ```kotlin
 val isDialect = Dialect("en-US", Language.English).isDialect
 val isScriptUsedInLanguage = Script.Cyrillic.isWrittenIn(Language.Russian)
 ```
 
-**Interacting with Language Tags**
-
-```kotlin
-val languageTag = LanguageTag("fr", LanguageFamily.Romance)
-val language = languageTag.asLanguage()
-val countryCode = languageTag.substringAfter("-")
-```
-
-**Territorializing Languages**
+### Territorializing Languages
 
 ```kotlin
 val dialect = Language.English.territorialize(Country.Australia)
@@ -70,7 +171,7 @@ val dialectLanguageTag = dialect.languageTag
 val dialectCountryCode = dialect.country.code
 ```
 
-**Benefits of Using Xenoglot**
+## Benefits of Using Xenoglot
 
 * **Improved Language Handling:** Xenoglot provides a consistent and structured approach to managing
   language data, reducing errors and inconsistencies.
@@ -84,33 +185,9 @@ val dialectCountryCode = dialect.country.code
 * **Promote Language-Aware Development:** Xenoglot encourages language-aware development practices,
   ensuring that language data is handled accurately and appropriately.
 
-**Getting Started**
-
-To get started with Xenoglot, refer to the comprehensive documentation available at
-[source.teogor.dev/xenoglot](https://source.teogor.dev/xenoglot). The documentation provides
-detailed explanations, examples, and best practices for using the library effectively.
-
 ## Find this repository useful? 🩷
 
 * Support it by joining __[stargazers](https://github.com/teogor/xenoglot/stargazers)__ for this
   repository. 📁
 * Get notified about my new projects by __[following me](https://github.com/teogor)__ on GitHub. 💻
 * Interested in sponsoring me? [Support me](sponsor.md) on GitHub! 🤝
-
-# License
-
-```xml
-Designed and developed by 2023 teogor (Teodor Grigor)
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
-```

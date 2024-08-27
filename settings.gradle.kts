@@ -1,5 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
+rootProject.name = "Xenoglot"
+
 pluginManagement {
   repositories {
     google {
@@ -10,6 +12,7 @@ pluginManagement {
       }
     }
     mavenCentral()
+    mavenLocal()
     gradlePluginPortal()
   }
 }
@@ -24,11 +27,12 @@ dependencyResolutionManagement {
       }
     }
     mavenCentral()
+    mavenLocal()
   }
 }
 
-rootProject.name = "Xenoglot"
-
-include("android")
-include("bom")
-include("core")
+include("xenoglot-bom")
+include("xenoglot-atlas")
+include("xenoglot-core")
+include("xenoglot-atlas-extended")
+include("xenoglot-locale")

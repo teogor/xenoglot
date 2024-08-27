@@ -1,0 +1,10 @@
+public final class dev/teogor/xenoglot/atlas/extended/ExtendedCountryLanguageRegistry {
+	public static final field INSTANCE Ldev/teogor/xenoglot/atlas/extended/ExtendedCountryLanguageRegistry;
+	public final fun getLocalization (Ljava/lang/String;)Ldev/teogor/xenoglot/atlas/CountryLocalization;
+	public final fun getLocalizations (Ljava/lang/String;)Ljava/util/List;
+}
+
+public final class dev/teogor/xenoglot/atlas/extended/LanguageCodeNotFoundException : java/lang/Exception {
+	public fun <init> (Ljava/lang/String;)V
+}
+

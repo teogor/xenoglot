@@ -1,0 +1,39 @@
+public final class dev/teogor/xenoglot/locale/LanguageKtxKt {
+	public static final fun displayName (Ldev/teogor/xenoglot/Language;Ldev/teogor/xenoglot/Language;)Ljava/lang/String;
+	public static final fun getDisplayName (Ldev/teogor/xenoglot/Language;Ldev/teogor/xenoglot/Language;)Ljava/lang/String;
+	public static final fun getLocale (Ldev/teogor/xenoglot/Language;)Ldev/teogor/xenoglot/locale/XenoglotLocale;
+}
+
+public final class dev/teogor/xenoglot/locale/LocaleCategory : java/lang/Enum {
+	public static final field DISPLAY Ldev/teogor/xenoglot/locale/LocaleCategory;
+	public static final field FORMAT Ldev/teogor/xenoglot/locale/LocaleCategory;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/teogor/xenoglot/locale/LocaleCategory;
+	public static fun values ()[Ldev/teogor/xenoglot/locale/LocaleCategory;
+}
+
+public final class dev/teogor/xenoglot/locale/XenoglotLocale {
+	public static final field Companion Ldev/teogor/xenoglot/locale/XenoglotLocale$Companion;
+	public fun <init> (Ldev/teogor/xenoglot/Language;)V
+	public fun <init> (Ldev/teogor/xenoglot/Language;Ldev/teogor/xenoglot/Country;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCountry ()Ldev/teogor/xenoglot/Country;
+	public final fun getDisplayCountry ()Ljava/lang/String;
+	public final fun getDisplayCountry (Ldev/teogor/xenoglot/locale/XenoglotLocale;)Ljava/lang/String;
+	public final fun getDisplayLanguage ()Ljava/lang/String;
+	public final fun getDisplayLanguage (Ldev/teogor/xenoglot/locale/XenoglotLocale;)Ljava/lang/String;
+	public final fun getDisplayName ()Ljava/lang/String;
+	public final fun getDisplayName (Ldev/teogor/xenoglot/locale/XenoglotLocale;)Ljava/lang/String;
+	public final fun getLanguage ()Ldev/teogor/xenoglot/Language;
+	public fun hashCode ()I
+	public final fun toLanguageTag ()Ljava/lang/String;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/teogor/xenoglot/locale/XenoglotLocale$Companion {
+	public final fun getDefault ()Ldev/teogor/xenoglot/locale/XenoglotLocale;
+	public final fun getDefault (Ldev/teogor/xenoglot/locale/LocaleCategory;)Ldev/teogor/xenoglot/locale/XenoglotLocale;
+	public final fun setDefault (Ldev/teogor/xenoglot/locale/LocaleCategory;Ldev/teogor/xenoglot/locale/XenoglotLocale;)V
+	public final fun setDefault (Ldev/teogor/xenoglot/locale/XenoglotLocale;)V
+}
+
