@@ -1,21 +1,38 @@
-pluginManagement {
-  repositories {
-    google()
-    mavenCentral()
-    gradlePluginPortal()
-  }
-}
-@Suppress("UnstableApiUsage")
-dependencyResolutionManagement {
-  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-  repositories {
-    google()
-    mavenCentral()
-  }
-}
+@file:Suppress("UnstableApiUsage")
 
 rootProject.name = "Xenoglot"
 
-include("android")
-include("bom")
-include("core")
+pluginManagement {
+  repositories {
+    google {
+      mavenContent {
+        includeGroupAndSubgroups("androidx")
+        includeGroupAndSubgroups("com.android")
+        includeGroupAndSubgroups("com.google")
+      }
+    }
+    mavenCentral()
+    mavenLocal()
+    gradlePluginPortal()
+  }
+}
+
+dependencyResolutionManagement {
+  repositories {
+    google {
+      mavenContent {
+        includeGroupAndSubgroups("androidx")
+        includeGroupAndSubgroups("com.android")
+        includeGroupAndSubgroups("com.google")
+      }
+    }
+    mavenCentral()
+    mavenLocal()
+  }
+}
+
+include("xenoglot-bom")
+include("xenoglot-atlas")
+include("xenoglot-core")
+include("xenoglot-atlas-extended")
+include("xenoglot-locale")

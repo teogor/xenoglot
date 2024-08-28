@@ -1,12 +1,13 @@
-import com.vanniktech.maven.publish.SonatypeHost
-import dev.teogor.winds.api.MavenPublish
-import dev.teogor.winds.api.getValue
-import dev.teogor.winds.api.model.Developer
-import dev.teogor.winds.api.model.LicenseType
-import dev.teogor.winds.api.model.createVersion
-import dev.teogor.winds.api.provider.Scm
-import dev.teogor.winds.gradle.utils.afterWindsPluginConfiguration
-import dev.teogor.winds.gradle.utils.attachTo
+import dev.teogor.winds.api.SonatypeHost
+import dev.teogor.winds.api.ArtifactIdFormat
+import dev.teogor.winds.api.License
+import dev.teogor.winds.api.Person
+import dev.teogor.winds.api.Scm
+import dev.teogor.winds.api.TicketSystem
+import dev.teogor.winds.ktx.createVersion
+import dev.teogor.winds.ktx.person
+import dev.teogor.winds.ktx.scm
+import dev.teogor.winds.ktx.ticketSystem
 import org.jetbrains.dokka.gradle.DokkaMultiModuleTask
 import org.jetbrains.dokka.gradle.DokkaPlugin
 
@@ -19,100 +20,89 @@ buildscript {
 
 plugins {
   // Kotlin Suite
-  alias(libs.plugins.kotlin.jvm) apply false
-  alias(libs.plugins.kotlin.multiplatform) apply false
-  alias(libs.plugins.kotlin.android) apply false
+  alias(libs.plugins.jetbrains.kotlin.jvm) apply false
+  alias(libs.plugins.jetbrains.kotlin.multiplatform) apply false
+  alias(libs.plugins.jetbrains.kotlin.android) apply false
+  alias(libs.plugins.jetbrains.kotlin.serialization) apply false
 
   // Android Tools
   alias(libs.plugins.android.library) apply false
 
-  alias(libs.plugins.winds) apply true
+  alias(libs.plugins.teogor.winds) apply true
 
   alias(libs.plugins.vanniktech.maven) apply true
-  alias(libs.plugins.dokka) apply true
-  alias(libs.plugins.spotless) apply true
-  alias(libs.plugins.api.validator) apply true
+  alias(libs.plugins.jetbrains.dokka) apply true
+  alias(libs.plugins.diffplug.spotless) apply true
+  alias(libs.plugins.jetbrains.kotlinx.binary.compatibility) apply true
+
+  alias(libs.plugins.ben.manes.versions) apply true
+  alias(libs.plugins.littlerobots.version.catalog.update) apply true
 }
 
 winds {
-  buildFeatures {
-    mavenPublish = true
-
+  features {
+    mavenPublishing = true
     docsGenerator = true
   }
 
-  mavenPublish {
-    displayName = "Xenoglot"
-    name = "xenoglot"
-
-    canBePublished = false
-
-    description =
-      "\uD83C\uDF0D Xenoglot seamlessly masters languages and locales, empowering developers to integrate multilingual capabilities into their applications with ease."
-
-    groupId = "dev.teogor.xenoglot"
-    artifactIdElements = 1
-    url = "https://source.teogor.dev/xenoglot"
-
-    version = createVersion(1, 0, 0) {
-      alphaRelease(1)
-    }
-
-    // TODO winds
-    //  required by dokka
-    project.version = version!!.toString()
-
-    inceptionYear = 2023
-
-    sourceControlManagement(
-      Scm.Git(
-        owner = "teogor",
-        repo = "xenoglot",
-      ),
-    )
-
-    addLicense(LicenseType.APACHE_2_0)
-
-    addDeveloper(TeogorDeveloper())
-  }
-
-  docsGenerator {
+  moduleMetadata {
     name = "Xenoglot"
-    identifier = "xenoglot"
-    alertOnDependentModules = true
-  }
-}
+    description = """
+    |\uD83C\uDF0D Xenoglot seamlessly masters languages and locales, empowering developers to integrate multilingual capabilities into their applications with ease.
+    """.trimMargin()
+    yearCreated = 2024
+    websiteUrl = "https://source.teogor.dev/xenoglot"
+    apiDocsUrl = "$websiteUrl/html/"
 
-afterWindsPluginConfiguration { winds ->
-  val mavenPublish: MavenPublish by winds
-  if (mavenPublish.canBePublished) {
-    mavenPublishing {
-      publishToMavenCentral(SonatypeHost.S01)
-      signAllPublications()
-
-      @Suppress("UnstableApiUsage")
-      pom {
-        coordinates(
-          groupId = mavenPublish.groupId!!,
-          artifactId = mavenPublish.artifactId!!,
-          version = mavenPublish.version!!.toString(),
-        )
-        mavenPublish attachTo this
+    artifactDescriptor {
+      group = "dev.teogor.xenoglot"
+      name = "Xenoglot"
+      artifactIdFormat = ArtifactIdFormat.NAME_ONLY
+      version = createVersion(1, 0, 0) {
+        alphaRelease(1)
       }
     }
+
+    // Providing SCM (Source Control Management)
+    scm<Scm.GitLab> {
+      owner = "teogor"
+      repository = "xenoglot"
+    }
+
+    // Providing Ticket System
+    ticketSystem<TicketSystem.GitHub> {
+      owner = "teogor"
+      repository = "xenoglot"
+    }
+
+    // Providing Licenses
+    licensedUnder(License.Apache2())
+
+    // Providing Persons
+    person<Person.DeveloperContributor> {
+      id = "teogor"
+      name = "Teodor Grigor"
+      email = "open-source@teogor.dev"
+      url = "https://teogor.dev"
+      roles = listOf("Code Owner", "Developer", "Designer", "Maintainer")
+      timezone = "UTC+2"
+      organization = "Teogor"
+      organizationUrl = "https://github.com/teogor"
+    }
+  }
+
+  publishing {
+    cascade = true
+    enablePublicationSigning = true
+    optInForVanniktechPlugin = true
+    sonatypeHost = SonatypeHost.S01
+  }
+
+  documentationBuilder {
+    htmlPath = "html/"
+    markdownNewlineSeparator = "  "
   }
 }
-
-data class TeogorDeveloper(
-  override val id: String = "teogor",
-  override val name: String = "Teodor Grigor",
-  override val email: String = "open-source@teogor.dev",
-  override val url: String = "https://teogor.dev",
-  override val roles: List<String> = listOf("Code Owner", "Developer", "Designer", "Maintainer"),
-  override val timezone: String = "UTC+2",
-  override val organization: String = "Teogor",
-  override val organizationUrl: String = "https://github.com/teogor",
-) : Developer
 
 val ktlintVersion = "0.50.0"
 
@@ -128,9 +118,8 @@ subprojects {
         target("**/*.kt")
         targetExclude("**/build/**/*.kt")
         ktlint(ktlintVersion)
-          .userData(
+          .editorConfigOverride(
             mapOf(
-              "ktlint_code_style" to "official",
               "ij_kotlin_allow_trailing_comma" to "true",
               // These rules were introduced in ktlint 0.46.0 and should not be
               // enabled without further discussion. They are disabled for now.
@@ -193,5 +182,16 @@ subprojects {
       suppressInheritedMembers.set(false)
       offlineMode.set(false)
     }
+  }
+}
+
+versionCatalogUpdate {
+  keep {
+    // keep versions without any library or plugin reference
+    keepUnusedVersions = true
+    // keep all libraries that aren't used in the project
+    keepUnusedLibraries = true
+    // keep all plugins that aren't used in the project
+    keepUnusedPlugins = true
   }
 }
