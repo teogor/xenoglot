@@ -1,0 +1,72 @@
+public final class dev/teogor/xenoglot/pluralization/FewRule : dev/teogor/xenoglot/pluralization/PluralizationRule {
+	public fun <init> (Ljava/lang/String;)V
+	public fun getTemplate ()Ljava/lang/String;
+	public fun matches (I)Z
+}
+
+public final class dev/teogor/xenoglot/pluralization/ManyRule : dev/teogor/xenoglot/pluralization/PluralizationRule {
+	public fun <init> (Ljava/lang/String;)V
+	public fun getTemplate ()Ljava/lang/String;
+	public fun matches (I)Z
+}
+
+public final class dev/teogor/xenoglot/pluralization/OneRule : dev/teogor/xenoglot/pluralization/PluralizationRule {
+	public fun <init> (Ljava/lang/String;)V
+	public fun getTemplate ()Ljava/lang/String;
+	public fun matches (I)Z
+}
+
+public final class dev/teogor/xenoglot/pluralization/OtherRule : dev/teogor/xenoglot/pluralization/PluralizationRule {
+	public fun <init> (Ljava/lang/String;)V
+	public fun getTemplate ()Ljava/lang/String;
+	public fun matches (I)Z
+}
+
+public final class dev/teogor/xenoglot/pluralization/PluralForms {
+	public fun <init> (Ljava/util/List;)V
+	public final fun copy (Ljava/util/List;)Ldev/teogor/xenoglot/pluralization/PluralForms;
+	public static synthetic fun copy$default (Ldev/teogor/xenoglot/pluralization/PluralForms;Ljava/util/List;ILjava/lang/Object;)Ldev/teogor/xenoglot/pluralization/PluralForms;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getQuantityString (I)Ljava/lang/String;
+	public final fun getQuantityStringOrElse (ILjava/lang/String;)Ljava/lang/String;
+	public static synthetic fun getQuantityStringOrElse$default (Ldev/teogor/xenoglot/pluralization/PluralForms;ILjava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+	public final fun getQuantityStringOrNull (I)Ljava/lang/String;
+	public final fun getQuantityStringOrThrow (I)Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class dev/teogor/xenoglot/pluralization/PluralFormsKt {
+	public static final fun createPluralForms (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ldev/teogor/xenoglot/pluralization/PluralForms;
+}
+
+public abstract interface class dev/teogor/xenoglot/pluralization/PluralizationRule {
+	public abstract fun getTemplate ()Ljava/lang/String;
+	public abstract fun matches (I)Z
+}
+
+public final class dev/teogor/xenoglot/pluralization/PluralizationRuleKt {
+	public static final fun createPluralizationRules (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+}
+
+public abstract interface class dev/teogor/xenoglot/pluralization/PluralizationTemplates {
+	public abstract fun getFewTemplate ()Ljava/lang/String;
+	public abstract fun getManyTemplate ()Ljava/lang/String;
+	public abstract fun getOneTemplate ()Ljava/lang/String;
+	public abstract fun getOtherTemplate ()Ljava/lang/String;
+	public abstract fun getTwoTemplate ()Ljava/lang/String;
+	public abstract fun getZeroTemplate ()Ljava/lang/String;
+}
+
+public final class dev/teogor/xenoglot/pluralization/TwoRule : dev/teogor/xenoglot/pluralization/PluralizationRule {
+	public fun <init> (Ljava/lang/String;)V
+	public fun getTemplate ()Ljava/lang/String;
+	public fun matches (I)Z
+}
+
+public final class dev/teogor/xenoglot/pluralization/ZeroRule : dev/teogor/xenoglot/pluralization/PluralizationRule {
+	public fun <init> (Ljava/lang/String;)V
+	public fun getTemplate ()Ljava/lang/String;
+	public fun matches (I)Z
+}
+
