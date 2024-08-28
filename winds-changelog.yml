@@ -1,3 +1,15 @@
 1.0.0-alpha01:
   info: November 20, 2023
   content: 🎊 \*\*Initial Release\*\* 🎊
+1.0.0-alpha02:
+  info: August 28, 2024
+  sections:
+    - Enhancement:
+      - "Enhance Pluralization Support: Add PluralForms and Rule Implementations (#7) by @teogor"
+      - "Migrate to Kotlin Multiplatform: Add support for JVM, JS, iOS, macOS, Linux, tvOS, and watchOS (#6) by @teogor"
+    - Documentation:
+      - "Enhance Pluralization Support: Add PluralForms and Rule Implementations (#7) by @teogor"
+      - "Migrate to Kotlin Multiplatform: Add support for JVM, JS, iOS, macOS, Linux, tvOS, and watchOS (#6) by @teogor"
+      - "Introduce MkDocs for documentation generation (#5) by @teogor"
+    - Others:
+      - "Enable Type-Safe Project Accessors for Project References (#8) by @teogor"

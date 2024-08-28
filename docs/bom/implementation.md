@@ -23,11 +23,14 @@ To use BoM in your app, add the following dependencies to your app's `build.grad
 
     ```groovy title="build.gradle"
     dependencies {
-        def teogorXenoglotBom = "1.0.0-alpha01"
+        def teogorXenoglotBom = "1.0.0-alpha02"
         
-        implementation "dev.teogor.xenoglot:android:$teogorXenoglotBom"
-        implementation "dev.teogor.xenoglot:bom:$teogorXenoglotBom"
-        implementation "dev.teogor.xenoglot:core:$teogorXenoglotBom"
+        implementation "dev.teogor.xenoglot:xenoglot-atlas:$teogorXenoglotBom"
+        implementation "dev.teogor.xenoglot:xenoglot-atlas-extended:$teogorXenoglotBom"
+        implementation "dev.teogor.xenoglot:xenoglot-bom:$teogorXenoglotBom"
+        implementation "dev.teogor.xenoglot:xenoglot-core:$teogorXenoglotBom"
+        implementation "dev.teogor.xenoglot:xenoglot-locale:$teogorXenoglotBom"
+        implementation "dev.teogor.xenoglot:xenoglot-pluralization:$teogorXenoglotBom"
     }
     ```
 
@@ -35,11 +38,14 @@ To use BoM in your app, add the following dependencies to your app's `build.grad
 
     ```kotlin title="build.gradle.kts"
     dependencies {
-        val teogorXenoglotBom = "1.0.0-alpha01"
+        val teogorXenoglotBom = "1.0.0-alpha02"
         
-        implementation("dev.teogor.xenoglot:android:$teogorXenoglotBom")
-        implementation("dev.teogor.xenoglot:bom:$teogorXenoglotBom")
-        implementation("dev.teogor.xenoglot:core:$teogorXenoglotBom")
+        implementation("dev.teogor.xenoglot:xenoglot-atlas:$teogorXenoglotBom")
+        implementation("dev.teogor.xenoglot:xenoglot-atlas-extended:$teogorXenoglotBom")
+        implementation("dev.teogor.xenoglot:xenoglot-bom:$teogorXenoglotBom")
+        implementation("dev.teogor.xenoglot:xenoglot-core:$teogorXenoglotBom")
+        implementation("dev.teogor.xenoglot:xenoglot-locale:$teogorXenoglotBom")
+        implementation("dev.teogor.xenoglot:xenoglot-pluralization:$teogorXenoglotBom")
     }
     ```
 
@@ -56,24 +62,30 @@ First, define the dependencies in the `libs.versions.toml` file:
 
     ```toml title="gradle/libs.versions.toml"
     [versions]
-    teogor-xenoglot-bom = "1.0.0-alpha01"
+    teogor-xenoglot-bom = "1.0.0-alpha02"
     
     [libraries]
-    teogor-xenoglot-bom = { group = "dev.teogor.xenoglot", name = "bom", version.ref = "teogor-xenoglot-bom" }
-    teogor-xenoglot-android = { group = "dev.teogor.xenoglot", name = "android" }
-    teogor-xenoglot-core = { group = "dev.teogor.xenoglot", name = "core" }
+    teogor-xenoglot-bom = { group = "dev.teogor.xenoglot", name = "xenoglot-bom", version.ref = "teogor-xenoglot-bom" }
+    teogor-xenoglot-atlas = { group = "dev.teogor.xenoglot", name = "xenoglot-atlas" }
+    teogor-xenoglot-atlas-extended = { group = "dev.teogor.xenoglot", name = "xenoglot-atlas-extended" }
+    teogor-xenoglot-core = { group = "dev.teogor.xenoglot", name = "xenoglot-core" }
+    teogor-xenoglot-locale = { group = "dev.teogor.xenoglot", name = "xenoglot-locale" }
+    teogor-xenoglot-pluralization = { group = "dev.teogor.xenoglot", name = "xenoglot-pluralization" }
     ```
 
 === "Module Based"
 
     ```toml title="gradle/libs.versions.toml"
     [versions]
-    teogor-xenoglot-bom = "1.0.0-alpha01"
+    teogor-xenoglot-bom = "1.0.0-alpha02"
     
     [libraries]
-    teogor-xenoglot-bom = { module = "dev.teogor.xenoglot:bom", version.ref = "teogor-xenoglot-bom" }
-    teogor-xenoglot-android = { module = "dev.teogor.xenoglot:android" }
-    teogor-xenoglot-core = { module = "dev.teogor.xenoglot:core" }
+    teogor-xenoglot-bom = { module = "dev.teogor.xenoglot:xenoglot-bom", version.ref = "teogor-xenoglot-bom" }
+    teogor-xenoglot-atlas = { module = "dev.teogor.xenoglot:xenoglot-atlas" }
+    teogor-xenoglot-atlas-extended = { module = "dev.teogor.xenoglot:xenoglot-atlas-extended" }
+    teogor-xenoglot-core = { module = "dev.teogor.xenoglot:xenoglot-core" }
+    teogor-xenoglot-locale = { module = "dev.teogor.xenoglot:xenoglot-locale" }
+    teogor-xenoglot-pluralization = { module = "dev.teogor.xenoglot:xenoglot-pluralization" }
     ```
 
 Then, add these dependencies in your app's `build.gradle` file:
@@ -83,8 +95,11 @@ Then, add these dependencies in your app's `build.gradle` file:
     ```groovy title="build.gradle"
     dependencies {
         implementation platform(libs.teogor.xenoglot.bom)
-        implementation libs.teogor.xenoglot.android
+        implementation libs.teogor.xenoglot.atlas
+        implementation libs.teogor.xenoglot.atlas.extended
         implementation libs.teogor.xenoglot.core
+        implementation libs.teogor.xenoglot.locale
+        implementation libs.teogor.xenoglot.pluralization
     }
     ```
 
@@ -93,8 +108,11 @@ Then, add these dependencies in your app's `build.gradle` file:
     ```kotlin title="build.gradle.kts"
     dependencies {
         implementation(platform(libs.teogor.xenoglot.bom))
-        implementation(libs.teogor.xenoglot.android)
+        implementation(libs.teogor.xenoglot.atlas)
+        implementation(libs.teogor.xenoglot.atlas.extended)
         implementation(libs.teogor.xenoglot.core)
+        implementation(libs.teogor.xenoglot.locale)
+        implementation(libs.teogor.xenoglot.pluralization)
     }
     ```
 

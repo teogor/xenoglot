@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-import dev.teogor.winds.api.ArtifactIdFormat
-import dev.teogor.winds.api.NameFormat
-
 plugins {
   alias(libs.plugins.teogor.winds)
 }
@@ -26,8 +23,6 @@ winds {
     isBom = true
     artifactDescriptor {
       name = "BoM"
-      nameFormat = NameFormat.FULL
-      artifactIdFormat = ArtifactIdFormat.NAME_ONLY
     }
   }
 }
