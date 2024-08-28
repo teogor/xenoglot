@@ -15,20 +15,20 @@ the [BOM to library version mapping](bom-mapping.md).
 
 In the `build.gradle` dependencies section, keep the import of the BOM platform. On the library
 dependency import, specify the desired version. For example, here's how to declare dependencies if
-you want to use a different version of Core, no matter what version is designated
+you want to use a different version of Pluralization, no matter what version is designated
 in the BOM:
 
 ```groovy
 dependencies {
   // Import the BoM BOM
-  implementation platform('dev.teogor.xenoglot:bom:1.0.0-alpha01')
+  implementation platform('dev.teogor.xenoglot:xenoglot-bom:1.0.0-alpha02')
 
-  // Import Core library
-  implementation 'dev.teogor.xenoglot:core:1.0.0-alpha01'
+  // Import Pluralization library
+  implementation 'dev.teogor.xenoglot:xenoglot-pluralization:1.0.0-alpha02'
 
   // Import other BoM libraries without version numbers
   // ..
-  implementation 'dev.teogor.xenoglot:android'
+  implementation 'dev.teogor.xenoglot:xenoglot-atlas'
 }
 ```
 
@@ -62,8 +62,8 @@ Yes. You can include the BOM itself in the version catalog, and omit the other B
 
 ```toml
 [libraries]
-teogor-xenoglot-bom = { group = "dev.teogor.xenoglot", name = "bom", version.ref = "teogor-xenoglot-bom" }
-teogor-xenoglot-android = { group = "dev.teogor.xenoglot", name = "android" }
+teogor-xenoglot-bom = { group = "dev.teogor.xenoglot", name = "xenoglot-bom", version.ref = "teogor-xenoglot-bom" }
+teogor-xenoglot-atlas = { group = "dev.teogor.xenoglot", name = "xenoglot-atlas" }
 ```
 
 Don’t forget to import the BOM in your module’s `build.gradle`:

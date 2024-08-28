@@ -1,6 +1,7 @@
 import dev.teogor.winds.api.SonatypeHost
 import dev.teogor.winds.api.ArtifactIdFormat
 import dev.teogor.winds.api.License
+import dev.teogor.winds.api.NameFormat
 import dev.teogor.winds.api.Person
 import dev.teogor.winds.api.Scm
 import dev.teogor.winds.api.TicketSystem
@@ -50,16 +51,17 @@ winds {
     description = """
     |\uD83C\uDF0D Xenoglot seamlessly masters languages and locales, empowering developers to integrate multilingual capabilities into their applications with ease.
     """.trimMargin()
-    yearCreated = 2024
+    yearCreated = 2023
     websiteUrl = "https://source.teogor.dev/xenoglot"
     apiDocsUrl = "$websiteUrl/html/"
 
     artifactDescriptor {
       group = "dev.teogor.xenoglot"
       name = "Xenoglot"
-      artifactIdFormat = ArtifactIdFormat.NAME_ONLY
+      artifactIdFormat = ArtifactIdFormat.MODULE_NAME_ONLY
+      nameFormat = NameFormat.FULL
       version = createVersion(1, 0, 0) {
-        alphaRelease(1)
+        alphaRelease(2)
       }
     }
 
@@ -92,6 +94,7 @@ winds {
   }
 
   publishing {
+    enabled = false
     cascade = true
     enablePublicationSigning = true
     optInForVanniktechPlugin = true

@@ -44,5 +44,84 @@
         "date": 1700481600
       }
     ]
+  },
+  {
+    "module": "dev.teogor.xenoglot:xenoglot-bom",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "patch": 0,
+      "flag": "Alpha",
+      "versionQualifier": 2
+    },
+    "date": 1724855206,
+    "dependencies": [
+      {
+        "module": "dev.teogor.xenoglot:xenoglot-atlas",
+        "version": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0,
+          "flag": "Alpha",
+          "versionQualifier": 2
+        },
+        "date": 1724855206
+      },
+      {
+        "module": "dev.teogor.xenoglot:xenoglot-atlas-extended",
+        "version": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0,
+          "flag": "Alpha",
+          "versionQualifier": 2
+        },
+        "date": 1724855206
+      },
+      {
+        "module": "dev.teogor.xenoglot:xenoglot-bom",
+        "version": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0,
+          "flag": "Alpha",
+          "versionQualifier": 2
+        },
+        "date": 1724855206
+      },
+      {
+        "module": "dev.teogor.xenoglot:xenoglot-core",
+        "version": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0,
+          "flag": "Alpha",
+          "versionQualifier": 2
+        },
+        "date": 1724855206
+      },
+      {
+        "module": "dev.teogor.xenoglot:xenoglot-locale",
+        "version": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0,
+          "flag": "Alpha",
+          "versionQualifier": 2
+        },
+        "date": 1724855206
+      },
+      {
+        "module": "dev.teogor.xenoglot:xenoglot-pluralization",
+        "version": {
+          "major": 1,
+          "minor": 0,
+          "patch": 0,
+          "flag": "Alpha",
+          "versionQualifier": 2
+        },
+        "date": 1724855206
+      }
+    ]
   }
 ]

@@ -3,7 +3,7 @@
 ### Overview
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Maven Central](https://img.shields.io/maven-central/v/dev.teogor.xenoglot/bom.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=g%3Adev.teogor.xenoglot+a%3Abom&smo=true)
+[![Maven Central](https://img.shields.io/maven-central/v/dev.teogor.xenoglot/xenoglot-bom.svg?label=Maven%20Central)](https://central.sonatype.com/search?q=g%3Adev.teogor.xenoglot+a%3Axenoglot-bom&smo=true)
 [![Profile](https://source.teogor.dev/badges/teogor-github.svg)](https://github.com/teogor)
 [![Open-Source Directory](https://source.teogor.dev/badges/teogor-dev.svg)](https://source.teogor.dev)
 
@@ -54,9 +54,9 @@ Xenoglot is designed to work across various platforms through Kotlin Multiplatfo
 
 **Note:** If you prefer manual dependency setup, follow the instructions in the "Manual Setup" section. Otherwise, jump to the "Version Catalog" section for centralized management.
 
-For information on using the KAPT plugin, see the [KAPT documentation](https://kotlinlang.org/docs/kapt.html).
-For information on using the KSP plugin, see the [KSP quick-start documentation](https://kotlinlang.org/docs/ksp-quickstart.html).
-For more information about dependencies, see [Add Build Dependencies](https://developer.android.com/studio/build/dependencies).
+For information on using the KAPT plugin, see the [KAPT documentation](https://kotlinlang.org/docs/kapt.html).  
+For information on using the KSP plugin, see the [KSP quick-start documentation](https://kotlinlang.org/docs/ksp-quickstart.html).  
+For more information about dependencies, see [Add Build Dependencies](https://developer.android.com/studio/build/dependencies).  
 
 ### Adding Xenoglot Dependencies Manually
 
@@ -66,11 +66,13 @@ To use Xenoglot in your app, add the following dependencies to your app's `build
 
     ```groovy title="build.gradle"
     dependencies {
-        def teogorXenoglot = "1.0.0-alpha01"
-
-        implementation "dev.teogor.xenoglot:android:$teogorXenoglot"
-        implementation "dev.teogor.xenoglot:bom:$teogorXenoglot"
-        implementation "dev.teogor.xenoglot:core:$teogorXenoglot"
+        def teogorXenoglot = "1.0.0-alpha02"
+        
+        implementation "dev.teogor.xenoglot:xenoglot-atlas:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:xenoglot-atlas-extended:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:xenoglot-core:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:xenoglot-locale:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:xenoglot-pluralization:$teogorXenoglot"
     }
     ```
 
@@ -78,11 +80,13 @@ To use Xenoglot in your app, add the following dependencies to your app's `build
 
     ```kotlin title="build.gradle.kts"
     dependencies {
-        val teogorXenoglot = "1.0.0-alpha01"
-
-        implementation("dev.teogor.xenoglot:android:$teogorXenoglot")
-        implementation("dev.teogor.xenoglot:bom:$teogorXenoglot")
-        implementation("dev.teogor.xenoglot:core:$teogorXenoglot")
+        val teogorXenoglot = "1.0.0-alpha02"
+        
+        implementation("dev.teogor.xenoglot:xenoglot-atlas:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:xenoglot-atlas-extended:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:xenoglot-core:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:xenoglot-locale:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:xenoglot-pluralization:$teogorXenoglot")
     }
     ```
 
@@ -99,24 +103,28 @@ First, define the dependencies in the `libs.versions.toml` file:
 
     ```toml title="gradle/libs.versions.toml"
     [versions]
-    teogor-xenoglot = "1.0.0-alpha01"
-
+    teogor-xenoglot = "1.0.0-alpha02"
+    
     [libraries]
-    teogor-xenoglot-android = { group = "dev.teogor.xenoglot", name = "android", version.ref = "teogor-xenoglot" }
-    teogor-xenoglot-bom = { group = "dev.teogor.xenoglot", name = "bom", version.ref = "teogor-xenoglot" }
-    teogor-xenoglot-core = { group = "dev.teogor.xenoglot", name = "core", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-atlas = { group = "dev.teogor.xenoglot", name = "xenoglot-atlas", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-atlas-extended = { group = "dev.teogor.xenoglot", name = "xenoglot-atlas-extended", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-core = { group = "dev.teogor.xenoglot", name = "xenoglot-core", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-locale = { group = "dev.teogor.xenoglot", name = "xenoglot-locale", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-pluralization = { group = "dev.teogor.xenoglot", name = "xenoglot-pluralization", version.ref = "teogor-xenoglot" }
     ```
 
 === "Module Based"
 
     ```toml title="gradle/libs.versions.toml"
     [versions]
-    teogor-xenoglot = "1.0.0-alpha01"
-
+    teogor-xenoglot = "1.0.0-alpha02"
+    
     [libraries]
-    teogor-xenoglot-android = { module = "dev.teogor.xenoglot:android", version.ref = "teogor-xenoglot" }
-    teogor-xenoglot-bom = { module = "dev.teogor.xenoglot:bom", version.ref = "teogor-xenoglot" }
-    teogor-xenoglot-core = { module = "dev.teogor.xenoglot:core", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-atlas = { module = "dev.teogor.xenoglot:xenoglot-atlas", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-atlas-extended = { module = "dev.teogor.xenoglot:xenoglot-atlas-extended", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-core = { module = "dev.teogor.xenoglot:xenoglot-core", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-locale = { module = "dev.teogor.xenoglot:xenoglot-locale", version.ref = "teogor-xenoglot" }
+    teogor-xenoglot-pluralization = { module = "dev.teogor.xenoglot:xenoglot-pluralization", version.ref = "teogor-xenoglot" }
     ```
 
 Then, add these dependencies in your app's `build.gradle` file:
@@ -125,9 +133,11 @@ Then, add these dependencies in your app's `build.gradle` file:
 
     ```groovy title="build.gradle"
     dependencies {
-        implementation libs.teogor.xenoglot.android
-        implementation libs.teogor.xenoglot.bom
+        implementation libs.teogor.xenoglot.atlas
+        implementation libs.teogor.xenoglot.atlas.extended
         implementation libs.teogor.xenoglot.core
+        implementation libs.teogor.xenoglot.locale
+        implementation libs.teogor.xenoglot.pluralization
     }
     ```
 
@@ -135,9 +145,11 @@ Then, add these dependencies in your app's `build.gradle` file:
 
     ```kotlin title="build.gradle.kts"
     dependencies {
-        implementation(libs.teogor.xenoglot.android)
-        implementation(libs.teogor.xenoglot.bom)
+        implementation(libs.teogor.xenoglot.atlas)
+        implementation(libs.teogor.xenoglot.atlas.extended)
         implementation(libs.teogor.xenoglot.core)
+        implementation(libs.teogor.xenoglot.locale)
+        implementation(libs.teogor.xenoglot.pluralization)
     }
     ```
 

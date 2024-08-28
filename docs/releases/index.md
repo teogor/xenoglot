@@ -8,17 +8,19 @@ Learn more: **[User Guide](../user-guide.md)** and **[Code Samples](../code-samp
 
 API Reference  
 [`dev.teogor.xenoglot:xenoglot-*`](../html/)  
-[`dev.teogor.xenoglot:android`](../html/android)  
-[`dev.teogor.xenoglot:bom`](../html/bom)  
-[`dev.teogor.xenoglot:core`](../html/core)
+[`dev.teogor.xenoglot:xenoglot-atlas`](../html/xenoglot-atlas)  
+[`dev.teogor.xenoglot:xenoglot-atlas-extended`](../html/xenoglot-atlas-extended)  
+[`dev.teogor.xenoglot:xenoglot-core`](../html/xenoglot-core)  
+[`dev.teogor.xenoglot:xenoglot-locale`](../html/xenoglot-locale)  
+[`dev.teogor.xenoglot:xenoglot-pluralization`](../html/xenoglot-pluralization)
 
 [//]: # (REGION-API-REFERENCE)
 
 [//]: # (REGION-RELEASE-TABLE)
 
-| Latest Update       |  Stable Release  |  Release Candidate  |  Beta Release  |  Alpha Release  |
-|:--------------------|:----------------:|:-------------------:|:--------------:|:---------------:|
-| November 20, 2023   |        -         |          -          |       -        |  1.0.0-alpha01  |
+| Latest Update     |  Stable Release  |  Release Candidate  |  Beta Release  |  Alpha Release  |
+|:------------------|:----------------:|:-------------------:|:--------------:|:---------------:|
+| August 28, 2024   |        -         |          -          |       -        |  1.0.0-alpha02  |
 
 [//]: # (REGION-RELEASE-TABLE)
 
@@ -32,11 +34,13 @@ To use Xenoglot in your app, add the following dependencies to your app's `build
 
     ```groovy title="build.gradle"
     dependencies {
-        def teogorXenoglot = "1.0.0-alpha01"
+        def teogorXenoglot = "1.0.0-alpha02"
         
-        implementation "dev.teogor.xenoglot:android:$teogorXenoglot"
-        implementation "dev.teogor.xenoglot:bom:$teogorXenoglot"
-        implementation "dev.teogor.xenoglot:core:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:xenoglot-atlas:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:xenoglot-atlas-extended:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:xenoglot-core:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:xenoglot-locale:$teogorXenoglot"
+        implementation "dev.teogor.xenoglot:xenoglot-pluralization:$teogorXenoglot"
     }
     ```
 
@@ -44,11 +48,13 @@ To use Xenoglot in your app, add the following dependencies to your app's `build
 
     ```kotlin title="build.gradle.kts"
     dependencies {
-        val teogorXenoglot = "1.0.0-alpha01"
+        val teogorXenoglot = "1.0.0-alpha02"
         
-        implementation("dev.teogor.xenoglot:android:$teogorXenoglot")
-        implementation("dev.teogor.xenoglot:bom:$teogorXenoglot")
-        implementation("dev.teogor.xenoglot:core:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:xenoglot-atlas:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:xenoglot-atlas-extended:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:xenoglot-core:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:xenoglot-locale:$teogorXenoglot")
+        implementation("dev.teogor.xenoglot:xenoglot-pluralization:$teogorXenoglot")
     }
     ```
 
@@ -71,6 +77,27 @@ for this library before you create a new one.
 [//]: # (REGION-VERSION-CHANGELOG)
 
 ### Version 1.0.0
+
+#### Version 1.0.0-alpha02
+
+August 28, 2024
+
+[`dev.teogor.xenoglot:xenoglot-*:1.0.0-alpha02`](https://gitlab.com/teogor/xenoglot/releases/1.0.0-alpha02) is released. [Version 1.0.0-alpha02 contains these commits](https://gitlab.com/teogor/xenoglot/compare/1.0.0-alpha01...1.0.0-alpha02)
+
+**Enhancement**
+
+* Enhance Pluralization Support: Add PluralForms and Rule Implementations ([#7](https://github.com/teogor/xenoglot/issues/7)) by [@teogor](https://github.com/teogor)
+* Migrate to Kotlin Multiplatform: Add support for JVM, JS, iOS, macOS, Linux, tvOS, and watchOS ([#6](https://github.com/teogor/xenoglot/issues/6)) by [@teogor](https://github.com/teogor)
+
+**Documentation**
+
+* Enhance Pluralization Support: Add PluralForms and Rule Implementations ([#7](https://github.com/teogor/xenoglot/issues/7)) by [@teogor](https://github.com/teogor)
+* Migrate to Kotlin Multiplatform: Add support for JVM, JS, iOS, macOS, Linux, tvOS, and watchOS ([#6](https://github.com/teogor/xenoglot/issues/6)) by [@teogor](https://github.com/teogor)
+* Introduce MkDocs for documentation generation ([#5](https://github.com/teogor/xenoglot/issues/5)) by [@teogor](https://github.com/teogor)
+
+**Others**
+
+* Enable Type-Safe Project Accessors for Project References ([#8](https://github.com/teogor/xenoglot/issues/8)) by [@teogor](https://github.com/teogor)
 
 #### Version 1.0.0-alpha01
 

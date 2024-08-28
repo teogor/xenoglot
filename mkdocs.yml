@@ -16,12 +16,15 @@ copyright: Copyright &copy; 2023 Teodor Grigor (Teogor)
 
 # Page tree
 nav:
-  - Home: index.md
+  - Home:
+    - Overview: index.md
+    - Pluralization Guide: pluralization-guide.md
   - Releases:
     - releases.md
     - Implementation: releases/implementation.md
     - Changelog:
       - 1.0.0-alpha01: releases/changelog/1.0.0-alpha01.md
+      - 1.0.0-alpha02: releases/changelog/1.0.0-alpha02.md
   - Reference: reference.md
   - Sponsor: sponsor.md
   - Security: security.md
