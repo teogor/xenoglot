@@ -185,6 +185,39 @@ val dialectCountryCode = dialect.country.code
 * **Promote Language-Aware Development:** Xenoglot encourages language-aware development practices,
   ensuring that language data is handled accurately and appropriately.
 
+## Pluralization Support
+
+The `xenoglot-pluralization` module offers comprehensive support for pluralization, allowing you to manage
+and format strings based on quantities. This feature helps in correctly displaying text for
+different numbers of items, adapting to various pluralization rules.
+
+### Quick Start
+
+To get started with pluralization:
+
+1. **Create Plural Forms**: Define templates for different plural categories (e.g., zero, one, few,
+   many).
+2. **Retrieve Formatted Strings**: Use methods to get the appropriate string for specific
+   quantities.
+
+Here's a brief example:
+
+```kotlin
+val pluralForms = createPluralForms(
+    zeroTemplate = "No items",
+    oneTemplate = "One item",
+    twoTemplate = "Two items",
+    fewTemplate = "%d items",
+    manyTemplate = "%d items",
+    otherTemplate = "%d items",
+)
+
+println(pluralForms.getQuantityString(5))  // Output: "5 items"
+```
+
+For a more detailed guide on how to use pluralization effectively, please refer to
+the [Pluralization Module Documentation](pluralization-guide.md).
+
 ## Find this repository useful? 🩷
 
 * Support it by joining __[stargazers](https://github.com/teogor/xenoglot/stargazers)__ for this

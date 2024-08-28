@@ -31,8 +31,9 @@ dependencyResolutionManagement {
   }
 }
 
-include("xenoglot-bom")
 include("xenoglot-atlas")
-include("xenoglot-core")
 include("xenoglot-atlas-extended")
+include("xenoglot-bom")
+include("xenoglot-core")
 include("xenoglot-locale")
+include("xenoglot-pluralization")

@@ -92,6 +92,39 @@ To get started with Xenoglot, refer to the comprehensive documentation available
 [source.teogor.dev/xenoglot](https://source.teogor.dev/xenoglot). The documentation provides
 detailed explanations, examples, and best practices for using the library effectively.
 
+## Pluralization Support
+
+The `xenoglot-pluralization` module offers comprehensive support for pluralization, allowing you to manage
+and format strings based on quantities. This feature helps in correctly displaying text for
+different numbers of items, adapting to various pluralization rules.
+
+### Quick Start
+
+To get started with pluralization:
+
+1. **Create Plural Forms**: Define templates for different plural categories (e.g., zero, one, few,
+   many).
+2. **Retrieve Formatted Strings**: Use methods to get the appropriate string for specific
+   quantities.
+
+Here's a brief example:
+
+```kotlin
+val pluralForms = createPluralForms(
+    zeroTemplate = "No items",
+    oneTemplate = "One item",
+    twoTemplate = "Two items",
+    fewTemplate = "%d items",
+    manyTemplate = "%d items",
+    otherTemplate = "%d items",
+)
+
+println(pluralForms.getQuantityString(5))  // Output: "5 items"
+```
+
+For a more detailed guide on how to use pluralization effectively, please refer to
+the [Pluralization Module Documentation](docs/pluralization-guide.md).
+
 ## Find this repository useful? 🩷
 * Support it by joining __[stargazers](https://github.com/teogor/xenoglot/stargazers)__ for this repository. 📁
 * Get notified about my new projects by __[following me](https://github.com/teogor)__ on GitHub. 💻
