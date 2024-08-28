@@ -87,8 +87,8 @@ kotlin {
         implementation(libs.jetbrains.kotlinx.serialization.core)
         implementation(libs.jetbrains.kotlinx.serialization.json)
 
-        api(project(":xenoglot-atlas"))
-        api(project(":xenoglot-core"))
+        api(projects.xenoglotAtlas)
+        api(projects.xenoglotCore)
       }
     }
     val commonTest by getting {
